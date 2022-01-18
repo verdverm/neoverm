@@ -2,6 +2,8 @@
 
 My NeoVim setup
 
+Checkout [Jumpfiles](https://github.com/hofstadter-io/jumpfiles) for my keystroke shortening setup.
+
 ### Installing
 
 You should be able to use this Lua based setup by cloning and linking
