@@ -117,6 +117,8 @@ local function packer_startup()
 
   -- Utilities
 
+  use "jbyuki/venn.nvim"
+
   use 'lukas-reineke/indent-blankline.nvim'
 
   use {

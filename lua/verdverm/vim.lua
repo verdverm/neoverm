@@ -1,8 +1,7 @@
 local function set_augroup()
   vim.api.nvim_command("augroup WrapInMarkdown")
-  vim.api.nvim_command("autocmd!")
   vim.api.nvim_command("autocmd FileType markdown setlocal wrap")
-  vim.api.nvim_command("autocmd BufNewFile,BufRead *.cue set filetype=cue")
+  vim.api.nvim_command("autocmd!")
   vim.api.nvim_command("augroup END")
 end
 
@@ -63,12 +62,17 @@ local function set_keymaps()
   map('n', '<C-l>', '<CMD>wincmd l<CR>', options)
 end
 
+local function set_filetypes()
+  vim.api.nvim_command("autocmd BufNewFile,BufRead *.cue set filetype=cue")
+end
+
 local function init()
   set_augroup()
   set_vim_g()
   set_vim_o()
   set_vim_wo()
   set_keymaps()
+  set_filetypes()
 end
 
 return {
