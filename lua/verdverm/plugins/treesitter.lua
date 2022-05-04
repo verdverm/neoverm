@@ -4,6 +4,7 @@ local function init()
       'bash',
       'c',
       'css',
+      'cue',
       'dockerfile',
       'go',
       'gomod',

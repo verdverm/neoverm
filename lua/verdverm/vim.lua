@@ -63,7 +63,7 @@ local function set_keymaps()
 end
 
 local function set_filetypes()
-  vim.api.nvim_command("autocmd BufNewFile,BufRead *.cue set filetype=cue")
+  -- vim.api.nvim_command("autocmd BufNewFile,BufRead *.cue set filetype=cue")
 end
 
 local function init()
