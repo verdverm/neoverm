@@ -244,6 +244,11 @@ _G.packer_plugins = {
     path = "/home/tony/.local/share/nvim/site/pack/packer/start/venn.nvim",
     url = "https://github.com/jbyuki/venn.nvim"
   },
+  ["vim-buffergator"] = {
+    loaded = true,
+    path = "/home/tony/.local/share/nvim/site/pack/packer/start/vim-buffergator",
+    url = "https://github.com/jeetsukumaran/vim-buffergator"
+  },
   ["vim-floaterm"] = {
     config = { "\27LJ\2\nF\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\30verdverm.plugins.floaterm\frequire\0" },
     loaded = true,
@@ -268,6 +273,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: lspcontainers.nvim
+time([[Config for lspcontainers.nvim]], true)
+try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\31verdverm.plugins.lspconfig\frequire\0", "config", "lspcontainers.nvim")
+time([[Config for lspcontainers.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\nü\1\0\0\3\0\5\0\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\4\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\29verdverm.plugins.lspkind!verdverm.plugins.cmp_tabnine\tinit\25verdverm.plugins.cmp\frequire\0", "config", "nvim-cmp")
@@ -276,46 +289,38 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\2\nH\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit verdverm.plugins.treesitter\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\31verdverm.plugins.telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\nE\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\29verdverm.plugins.lualine\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
--- Config for: auto-session
-time([[Config for auto-session]], true)
-try_loadstring("\27LJ\2\nJ\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\"verdverm.plugins.auto_session\frequire\0", "config", "auto-session")
-time([[Config for auto-session]], false)
--- Config for: tokyonight.nvim
-time([[Config for tokyonight.nvim]], true)
-try_loadstring("\27LJ\2\nH\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit verdverm.plugins.tokyonight\frequire\0", "config", "tokyonight.nvim")
-time([[Config for tokyonight.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\30verdverm.plugins.gitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
--- Config for: lsp-colors.nvim
-time([[Config for lsp-colors.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15lsp-colors\frequire\0", "config", "lsp-colors.nvim")
-time([[Config for lsp-colors.nvim]], false)
--- Config for: nerdtree
-time([[Config for nerdtree]], true)
-try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\30verdverm.plugins.nerdtree\frequire\0", "config", "nerdtree")
-time([[Config for nerdtree]], false)
 -- Config for: vim-floaterm
 time([[Config for vim-floaterm]], true)
 try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\30verdverm.plugins.floaterm\frequire\0", "config", "vim-floaterm")
 time([[Config for vim-floaterm]], false)
--- Config for: lspcontainers.nvim
-time([[Config for lspcontainers.nvim]], true)
-try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\31verdverm.plugins.lspconfig\frequire\0", "config", "lspcontainers.nvim")
-time([[Config for lspcontainers.nvim]], false)
+-- Config for: auto-session
+time([[Config for auto-session]], true)
+try_loadstring("\27LJ\2\nJ\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\"verdverm.plugins.auto_session\frequire\0", "config", "auto-session")
+time([[Config for auto-session]], false)
+-- Config for: lsp-colors.nvim
+time([[Config for lsp-colors.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15lsp-colors\frequire\0", "config", "lsp-colors.nvim")
+time([[Config for lsp-colors.nvim]], false)
+-- Config for: tokyonight.nvim
+time([[Config for tokyonight.nvim]], true)
+try_loadstring("\27LJ\2\nH\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit verdverm.plugins.tokyonight\frequire\0", "config", "tokyonight.nvim")
+time([[Config for tokyonight.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\31verdverm.plugins.telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\30verdverm.plugins.gitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: nerdtree
+time([[Config for nerdtree]], true)
+try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\30verdverm.plugins.nerdtree\frequire\0", "config", "nerdtree")
+time([[Config for nerdtree]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -327,5 +332,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

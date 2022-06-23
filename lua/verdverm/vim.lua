@@ -16,14 +16,17 @@ local function set_vim_o()
     undolevels = 1000,
     undoreload = 10000,
     errorbells = false,
-    expandtab = true,
+    -- expandtab = true,
     hidden = true,
     history=1000,
-    scrolloff = 3,
+    scrolloff = 5,
+    tabstop = 2,
     softtabstop = 2,
+    shiftwidth = 2,
     showmode = false,
     termguicolors = true,
-    foldlevel = 10
+    foldlevel = 10,
+    list = true
   }
 
   -- Generic vim.o
@@ -34,6 +37,13 @@ local function set_vim_o()
   -- Custom vim.o
   vim.o.clipboard = 'unnamedplus'
   vim.o.shortmess = vim.o.shortmess .. 'c'
+
+  vim.opt.listchars = {
+    tab = '··',
+    extends = '⟩',
+    precedes = '⟨',
+    trail = '·'
+  }
 
   -- Not yet in vim.o
   vim.cmd('set encoding=utf8')
@@ -63,7 +73,7 @@ local function set_keymaps()
 end
 
 local function set_filetypes()
-  -- vim.api.nvim_command("autocmd BufNewFile,BufRead *.cue set filetype=cue")
+  vim.api.nvim_command("autocmd BufNewFile,BufRead *.inc set filetype=makefile")
 end
 
 local function init()

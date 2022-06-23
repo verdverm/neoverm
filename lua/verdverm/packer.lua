@@ -115,6 +115,8 @@ local function packer_startup()
     end
   }
 
+  use 'jeetsukumaran/vim-buffergator'
+
   -- Utilities
 
   use "jbyuki/venn.nvim"
