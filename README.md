@@ -39,11 +39,20 @@ Movement:
 
 - You can move between splits with `Ctrl-<hjkl>`, create them the normal way
 
+Completion: `<C-Space>`
+
 NERDTree:
 
 - `<F3>` to toggle NERDTree
 - `,nf` to locate current buffer in NERDTree
 - `s` from NERDTree to open file in new split
+- `,b` for list of files edited this session
+
+Search:
+
+- `,fb` to find in buffer files
+- `,fg` to find in all files
+- `,ff` to find in file names
 
 Tools:
 
@@ -51,4 +60,7 @@ Tools:
 - `,lg` for lazygit
 - `,ld` for lazydocker
 
+Tabs:
 
+- `,v` to retab
+- `,c` to toggle tabs / spaces for indent
