@@ -3,6 +3,7 @@ local function init()
     defaults = {
       file_ignore_patterns = {
         "node_modules/.*",
+        "cue.mod/.*",
         "secret.d/.*",
         "%.pem",
         ".git/*"
