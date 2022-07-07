@@ -1,6 +1,8 @@
 local function set_augroup()
   vim.api.nvim_command("augroup WrapInMarkdown")
   vim.api.nvim_command("autocmd FileType markdown setlocal wrap")
+  vim.api.nvim_command("autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif")
+  vim.api.nvim_command("autocmd FileChangedShellPost * echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None")
   vim.api.nvim_command("autocmd!")
   vim.api.nvim_command("augroup END")
 end
@@ -26,7 +28,7 @@ local function set_vim_o()
     showmode = false,
     termguicolors = true,
     foldlevel = 10,
-    list = true
+    list = true,
   }
 
   -- Generic vim.o
@@ -52,7 +54,9 @@ local function set_vim_o()
   vim.cmd('set secure')
   vim.cmd('set splitright')
   vim.cmd('set tabstop=2')
-  vim.cmd('set updatetime=300')
+  vim.cmd('set updatetime=100')
+	vim.cmd('au FocusGained * checktime')
+	vim.cmd('au CursorHold * checktime')
 end
 
 local function set_vim_wo()
