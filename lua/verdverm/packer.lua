@@ -168,6 +168,12 @@ local function packer_startup()
       require'verdverm.plugins.code_action_menu'.init()
     end
   }
+
+  -- https://github.com/glacambre/firenvim
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+  }
 end
 
 local function init()

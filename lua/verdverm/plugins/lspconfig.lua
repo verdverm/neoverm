@@ -89,13 +89,13 @@ local function init()
     require'lspconfig'[server].setup(config)
   end
 
-  for _, server in pairs(lspcontainer_servers) do
-    local config = make_config()
+  --for _, server in pairs(lspcontainer_servers) do
+    --local config = make_config()
 
-    require'verdverm.plugins.lspcontainers'.setup(config, server)
+    --require'verdverm.plugins.lspcontainers'.setup(config, server)
 
-    require'lspconfig'[server].setup(config)
-  end
+    --require'lspconfig'[server].setup(config)
+  --end
 end
 
 return {

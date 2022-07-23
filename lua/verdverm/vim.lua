@@ -74,6 +74,8 @@ local function set_keymaps()
   map('n', '<C-j>', '<CMD>wincmd j<CR>', options)
   map('n', '<C-k>', '<CMD>wincmd k<CR>', options)
   map('n', '<C-l>', '<CMD>wincmd l<CR>', options)
+  map('n', '<C-w>j', ':split<CR>', options)
+  map('n', '<C-w>l', ':vsplit<CR>', options)
 end
 
 local function set_filetypes()
