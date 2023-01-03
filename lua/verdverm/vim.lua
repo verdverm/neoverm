@@ -47,6 +47,10 @@ local function set_vim_o()
     trail = '·'
   }
 
+	-- terminal in vim config
+  vim.cmd('tnoremap <Esc> <C-\\><C-n>')
+  vim.api.nvim_set_keymap('n', '<leader>T', ':terminal bash --login<CR>', { noremap = false })
+
   -- Not yet in vim.o
   vim.cmd('set encoding=utf8')
   vim.cmd('set nowritebackup')

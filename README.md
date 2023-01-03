@@ -64,3 +64,14 @@ Tabs:
 
 - `,v` to retab
 - `,c` to toggle tabs / spaces for indent
+
+
+### Plugins to consider
+
+A list of plugins I've looked at and would like to consider,
+but have not had time yet to include
+
+- https://github.com/rcarriga/nvim-notify
+- (some spelling / grammar one, need to find again)
+  - ? https://github.com/dvdsk/prosesitter.nvim
+
