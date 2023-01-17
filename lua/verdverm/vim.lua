@@ -98,6 +98,7 @@ end
 
 local function set_filetypes()
 	vim.api.nvim_command("autocmd BufNewFile,BufRead *.inc set filetype=makefile")
+	vim.api.nvim_command("autocmd BufNewFile,BufRead Jenkinsfile* set filetype=groovy")
 end
 
 local function init()
