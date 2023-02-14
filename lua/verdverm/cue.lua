@@ -1,5 +1,4 @@
 local function treesitter_cue()
-  vim.api.nvim_command("autocmd BufNewFile,BufRead,BufEnter,BufWinEnter *.cue set filetype=cue")
 
   local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
   parser_config.cue = {

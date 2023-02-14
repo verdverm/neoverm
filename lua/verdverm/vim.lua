@@ -97,6 +97,7 @@ local function set_keymaps()
 end
 
 local function set_filetypes()
+  vim.api.nvim_command("autocmd BufNewFile,BufRead,BufEnter,BufWinEnter *.cue set filetype=cue")
 	vim.api.nvim_command("autocmd BufNewFile,BufRead *.inc set filetype=makefile")
 	vim.api.nvim_command("autocmd BufNewFile,BufRead Jenkinsfile* set filetype=groovy")
 end

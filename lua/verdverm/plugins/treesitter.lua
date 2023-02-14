@@ -27,7 +27,7 @@ local function init()
       'yaml',
     },
     highlight = {
-      enable = false,
+      enable = true,
       additional_vim_regex_highlighting = false
     },
     incremental_selection = {
