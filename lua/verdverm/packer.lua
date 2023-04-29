@@ -20,6 +20,9 @@ local function packer_startup()
   local use = packer.use
   packer.reset()
 
+	-- Easy Motion
+	use 'easymotion/vim-easymotion'
+
   -- Packer
   use 'wbthomason/packer.nvim'
 
@@ -75,7 +78,7 @@ local function packer_startup()
   use 'nvim-lua/popup.nvim'
   use {
     'nvim-telescope/telescope.nvim',
-    requires = 'rmagatti/session-lens',
+    -- requires = 'rmagatti/session-lens',
     config = function ()
       require'verdverm.plugins.telescope'.init()
     end
@@ -168,6 +171,9 @@ local function packer_startup()
       require'verdverm.plugins.code_action_menu'.init()
     end
   }
+
+	-- https://github.com/jjo/vim-cue
+	use 'jjo/vim-cue'
 
   -- https://github.com/glacambre/firenvim
   use {
