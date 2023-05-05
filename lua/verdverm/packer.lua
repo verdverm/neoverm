@@ -20,9 +20,6 @@ local function packer_startup()
   local use = packer.use
   packer.reset()
 
-	-- Easy Motion
-	use 'easymotion/vim-easymotion'
-
   -- Packer
   use 'wbthomason/packer.nvim'
 
@@ -123,6 +120,10 @@ local function packer_startup()
   use 'jeetsukumaran/vim-buffergator'
 
   -- Utilities
+
+	use 'easymotion/vim-easymotion'
+
+	use 'tpope/vim-surround'
 
   use "jbyuki/venn.nvim"
 
