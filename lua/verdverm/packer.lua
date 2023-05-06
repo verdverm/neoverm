@@ -25,15 +25,15 @@ local function packer_startup()
 
   -- Language Servers
   use {
-    'lspcontainers/lspcontainers.nvim',
-    requires = {
-      'neovim/nvim-lspconfig',
-      'nvim-lua/lsp_extensions.nvim',
-    },
-    config = function ()
-      require'verdverm.plugins.lspconfig'.init()
-    end
+    "williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		'neovim/nvim-lspconfig',
+		-- 'nvim-lua/lsp_extensions.nvim',
+    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
   }
+	
+	require'verdverm.plugins.lspconfig'.init()
+
   use 'hashivim/vim-terraform'
 
   -- Treesitter
@@ -173,14 +173,13 @@ local function packer_startup()
     end
   }
 
-	-- https://github.com/jjo/vim-cue
-	use 'jjo/vim-cue'
+  -- https://github.com/jjo/vim-cue
+  use 'jjo/vim-cue'
 
-  -- https://github.com/glacambre/firenvim
-  use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
-  }
+  -- https://github.com/untitled-ai/jupyter_ascending.vim
+  -- https://alpha2phi.medium.com/jupyter-notebook-vim-neovim-c2d67d56d563
+  use 'untitled-ai/jupyter_ascending.vim'
+
 end
 
 local function init()

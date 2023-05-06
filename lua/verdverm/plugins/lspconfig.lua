@@ -60,42 +60,39 @@ local function make_config()
   }
 end
 
+-- https://github.com/williamboman/nvim-lsp-installer#setup
 local function init()
   local lspconfig_servers = {
+		"ansiblels",
+		"bashls",
     "cssls",
+		"dockerls",
     "elixirls",
+		"gopls",
     "graphql",
+		"groovyls",
+		"html",
     "jsonls",
-    'jsonnet_ls',
+    "jsonnet_ls",
+		"lemminx",
+		"lua_ls",
+		"marksman",
+		"pylsp",
     "sqlls",
+		"taplo",
+		"tsserver",
+		"yamlls",
   }
-
-  local lspcontainer_servers = {
-    "bashls",
-    "dockerls",
-    "gopls",
-    "html",
-    "pylsp",
-    "rust_analyzer",
-    "sumneko_lua",
-    "terraformls",
-    "tsserver",
-    "yamlls"
-  }
+	require"mason".setup()
+	require"mason-lspconfig".setup{
+		ensure_installed = lspconfig_servers
+	}
 
   for _, server in pairs(lspconfig_servers) do
     local config = make_config()
 
     require'lspconfig'[server].setup(config)
   end
-
-  --for _, server in pairs(lspcontainer_servers) do
-    --local config = make_config()
-
-    --require'verdverm.plugins.lspcontainers'.setup(config, server)
-
-    --require'lspconfig'[server].setup(config)
-  --end
 end
 
 return {
