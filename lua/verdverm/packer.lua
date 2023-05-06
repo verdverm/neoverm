@@ -26,13 +26,13 @@ local function packer_startup()
   -- Language Servers
   use {
     "williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		'neovim/nvim-lspconfig',
-		-- 'nvim-lua/lsp_extensions.nvim',
+    "williamboman/mason-lspconfig.nvim",
+    'neovim/nvim-lspconfig',
+    -- 'nvim-lua/lsp_extensions.nvim',
     run = ":MasonUpdate" -- :MasonUpdate updates registry contents
   }
-	
-	require'verdverm.plugins.lspconfig'.init()
+
+  require'verdverm.plugins.lspconfig'.init()
 
   use 'hashivim/vim-terraform'
 
@@ -112,8 +112,17 @@ local function packer_startup()
   -- Filebrowser
   use {
     'preservim/nerdtree',
+    'Xuyuanp/nerdtree-git-plugin',
+    -- 'johnstef99/vim-nerdtree-syntax-highlight',
     config = function ()
       require'verdverm.plugins.nerdtree'.init()
+    end
+  }
+  -- NerdFont (must be after NertTree
+  use {
+    'ryanoasis/vim-devicons',
+    config = function ()
+      require'verdverm.plugins.devicons'.init()
     end
   }
 
@@ -121,11 +130,9 @@ local function packer_startup()
 
   -- Utilities
 
-	use 'easymotion/vim-easymotion'
+  use 'easymotion/vim-easymotion'
 
-	use 'tpope/vim-surround'
-
-  use "jbyuki/venn.nvim"
+  use 'tpope/vim-surround'
 
   use 'lukas-reineke/indent-blankline.nvim'
 

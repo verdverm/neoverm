@@ -63,30 +63,30 @@ end
 -- https://github.com/williamboman/nvim-lsp-installer#setup
 local function init()
   local lspconfig_servers = {
-		"ansiblels",
-		"bashls",
+    "ansiblels",
+    "bashls",
     "cssls",
-		"dockerls",
+    "dockerls",
     "elixirls",
-		"gopls",
+    "gopls",
     "graphql",
-		"groovyls",
-		"html",
+    "groovyls",
+    "html",
     "jsonls",
     "jsonnet_ls",
-		"lemminx",
-		"lua_ls",
-		"marksman",
-		"pylsp",
+    "lemminx",
+    "lua_ls",
+    "marksman",
+    "pylsp",
     "sqlls",
-		"taplo",
-		"tsserver",
-		"yamlls",
+    "taplo",
+    "tsserver",
+    "yamlls",
   }
-	require"mason".setup()
-	require"mason-lspconfig".setup{
-		ensure_installed = lspconfig_servers
-	}
+  require"mason".setup()
+  require"mason-lspconfig".setup{
+    ensure_installed = lspconfig_servers
+  }
 
   for _, server in pairs(lspconfig_servers) do
     local config = make_config()

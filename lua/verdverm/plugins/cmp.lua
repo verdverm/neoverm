@@ -8,23 +8,23 @@ local feedkey = function(key, mode)
 end
 
 local cmpnext = function(cmp,fallback)
-	if cmp.visible() then
-		cmp.select_next_item()
-	elseif vim.fn["vsnip#jumpable"](1) == 1 then
-		feedkey("<Plug>(vsnip-jump-next)", "")
-	elseif has_words_before() then
-		cmp.complete()
-	else
-		fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-	end
+  if cmp.visible() then
+    cmp.select_next_item()
+  elseif vim.fn["vsnip#jumpable"](1) == 1 then
+    feedkey("<Plug>(vsnip-jump-next)", "")
+  elseif has_words_before() then
+    cmp.complete()
+  else
+    fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+  end
 end
 
 local cmpprev = function(cmp)
-	if cmp.visible() then
-		cmp.select_prev_item()
-	elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-		feedkey("<Plug>(vsnip-jump-prev)", "")
-	end
+  if cmp.visible() then
+    cmp.select_prev_item()
+  elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+    feedkey("<Plug>(vsnip-jump-prev)", "")
+  end
 end
 
 local function init()
