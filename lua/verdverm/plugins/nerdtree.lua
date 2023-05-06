@@ -1,4 +1,10 @@
 local function init()
+  local map = vim.api.nvim_set_keymap
+  local options = { noremap = true }
+  map('n', '<F3>', ':NERDTreeToggle<CR>', options)
+  map('n', '<leader>nf', ':NERDTreeFind<CR>', options)
+  map('n', '<leader>nt', ':NERDTreeToggle<CR>', options)
+
   -- open nerdtree with vim
   vim.api.nvim_create_autocmd("VimEnter",{
     command = "NERDTree"
@@ -23,12 +29,7 @@ local function init()
     Unknown   ='?',
   }
   vim.g.NERDTreeGitStatusIndicatorMapCustom = icons
-
-  local map = vim.api.nvim_set_keymap
-  local options = { noremap = true }
-  map('n', '<F3>', ':NERDTreeToggle<CR>', options)
-  map('n', '<leader>nf', ':NERDTreeFind<CR>', options)
-  map('n', '<leader>nt', ':NERDTreeToggle<CR>', options)
+  vim.g.NERDTreeGitStatusConcealBrackets = 1
 
 end
 

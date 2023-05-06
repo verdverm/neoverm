@@ -112,8 +112,9 @@ local function packer_startup()
   -- Filebrowser
   use {
     'preservim/nerdtree',
-    'Xuyuanp/nerdtree-git-plugin',
-    -- 'johnstef99/vim-nerdtree-syntax-highlight',
+    requires = {
+      'Xuyuanp/nerdtree-git-plugin',
+    },
     config = function ()
       require'verdverm.plugins.nerdtree'.init()
     end
