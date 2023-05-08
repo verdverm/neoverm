@@ -101,14 +101,6 @@ local function packer_startup()
     end
   }
 
-  -- Sessions
-  use {
-    'rmagatti/auto-session',
-    config = function ()
-      require'verdverm.plugins.auto_session'.init()
-    end
-  }
-
   -- Filebrowser
   use {
     'preservim/nerdtree',
@@ -187,6 +179,14 @@ local function packer_startup()
   -- https://github.com/untitled-ai/jupyter_ascending.vim
   -- https://alpha2phi.medium.com/jupyter-notebook-vim-neovim-c2d67d56d563
   use 'untitled-ai/jupyter_ascending.vim'
+
+  -- Sessions (put last so other modules referenced are already loaded)
+  use {
+    'rmagatti/auto-session',
+    config = function ()
+      require'verdverm.plugins.auto_session'.init()
+    end
+  }
 
 end
 
