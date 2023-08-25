@@ -15,21 +15,24 @@ local function on_attach(client, bufnr)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  --buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.disable(' .. bufnr .. ')<CR>', opts)
+  buf_set_keymap('n', '<space>E', '<cmd>lua vim.diagnostic.enable(' .. bufnr .. ')<CR>', opts)
+
   -- Set some keybinds conditional on server capabilities
-  if client.resolved_capabilities.document_formatting then
+  if client.resolved_capabilities and client.resolved_capabilities.document_formatting then
     buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   end
-  if client.resolved_capabilities.document_range_formatting then
+  if client.resolved_capabilities and client.resolved_capabilities.document_range_formatting then
     buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
   end
 
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.resolved_capabilities and client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[
       augroup lsp_document_highlight
         autocmd! * <buffer>
@@ -38,6 +41,7 @@ local function on_attach(client, bufnr)
       augroup END
     ]], false)
   end
+
 end
 
 -- config that activates keymaps and enables snippet support
@@ -93,6 +97,10 @@ local function init()
 
     require'lspconfig'[server].setup(config)
   end
+
+  local opts = { noremap = true, silent = true }
+  vim.api.nvim_set_keymap('n', '<space>ee', '<cmd>lua vim.diagnostic.disable()<CR>', opts)
+  vim.api.nvim_set_keymap('n', '<space>EE', '<cmd>lua vim.diagnostic.enable()<CR>', opts)
 end
 
 return {

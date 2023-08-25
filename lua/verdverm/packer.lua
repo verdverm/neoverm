@@ -32,8 +32,6 @@ local function packer_startup()
     run = ":MasonUpdate" -- :MasonUpdate updates registry contents
   }
 
-  require'verdverm.plugins.lspconfig'.init()
-
   use 'hashivim/vim-terraform'
 
   -- Treesitter
@@ -58,18 +56,15 @@ local function packer_startup()
       'rafamadriz/friendly-snippets',
 
       'ray-x/cmp-treesitter',
-      {
-        'tzachar/cmp-tabnine',
-        run = "./install.sh",
-      },
       'onsails/lspkind-nvim'
     },
     config = function ()
       require'verdverm.plugins.cmp'.init()
-      require'verdverm.plugins.cmp_tabnine'.init()
       require'verdverm.plugins.lspkind'.init()
     end
   }
+
+  require'verdverm.plugins.lspconfig'.init()
 
   -- Telescope
   use 'nvim-lua/popup.nvim'

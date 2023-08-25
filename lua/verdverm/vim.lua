@@ -89,25 +89,6 @@ local function set_keymaps()
   map('n', '<C-w>j', ':split<CR>', options)
   map('n', '<C-w>l', ':vsplit<CR>', options)
 
-  -- support highlighting mutliple lines
-  vim.api.nvim_command("highlight LineHighlight ctermbg=blue guibg=blue")
-  vim.api.nvim_command("nnoremap <Leader>l :call matchadd('LineHighlight', '\\%'.line('.').'l')<CR>")
-  vim.api.nvim_command("vnoremap <Leader>l :<c-u>call HiglightVisualLines()<CR>")
-  vim.api.nvim_command("nnoremap <leader>c :call clearmatches()<CR>")
-  vim.api.nvim_exec([[
-  function! HiglightVisualLines()
-      for i in range(line('v'),line("'>"))
-          call matchadd('LineHighlight', '\%'.i.'l')
-      endfor
-  endfunction
-  ]], true)
-
-end
-
-local function set_filetypes()
-  vim.api.nvim_command("autocmd BufNewFile,BufRead,BufEnter,BufWinEnter *.cue set filetype=cue")
-  vim.api.nvim_command("autocmd BufNewFile,BufRead *.inc set filetype=makefile")
-  vim.api.nvim_command("autocmd BufNewFile,BufRead Jenkinsfile* set filetype=groovy")
 end
 
 local function init()
@@ -116,7 +97,6 @@ local function init()
   set_vim_o()
   set_vim_wo()
   set_keymaps()
-  set_filetypes()
 end
 
 return {

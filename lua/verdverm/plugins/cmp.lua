@@ -36,12 +36,11 @@ local function init()
       format = lspkind.cmp_format({
         maxwidth = 50,
         menu = ({
-          buffer = "[Buffer]",
-          cmp_tabnine = "[T9]",
-          nvim_lsp = "[LSP]",
-          nvim_lua = "[Lua]",
-          treesitter = "[TS]",
           vsnip = "[VSnip]",
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          treesitter = "[TS]",
+          nvim_lua = "[Lua]",
         }),
         with_text = true
       }),
@@ -52,19 +51,17 @@ local function init()
       end,
     },
     mapping = {
-      ['<C-Space>'] = cmp.mapping.confirm {
+      ['<C-h>'] = cmp.mapping.abort(),
+      ['<C-l>'] = cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
         select = true,
       },
       ["<Tab>"] = cmp.mapping(function(fallback) cmpnext(cmp,fallback) end, { "i", "s" }),
-      ["<C-l>"] = cmp.mapping(function(fallback) cmpnext(cmp,fallback) end, { "i", "s" }),
-      ["<C-k>"] = cmp.mapping(function(fallback) cmpnext(cmp,fallback) end, { "i", "s" }),
+      ["<C-j>"] = cmp.mapping(function(fallback) cmpnext(cmp,fallback) end, { "i", "s" }),
       ["<S-Tab>"] = cmp.mapping(function() cmpprev(cmp) end, { "i", "s" }),
-      ["<C-j>"] = cmp.mapping(function() cmpprev(cmp) end, { "i", "s" }),
-      ["<C-h>"] = cmp.mapping(function() cmpprev(cmp) end, { "i", "s" }),
+      ["<C-k>"] = cmp.mapping(function() cmpprev(cmp) end, { "i", "s" }),
     },
     sources = {
-      { name = 'cmp_tabnine' },
       { name = 'nvim_lsp' },
       { name = 'nvim_lua' },
       { name = 'treesitter' },

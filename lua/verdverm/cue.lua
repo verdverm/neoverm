@@ -16,6 +16,7 @@ local function treesitter_cue()
     },
     filetype = "cue" -- if filetype does not agrees with parser name
   }
+
 end
 
 local function init()
