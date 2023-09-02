@@ -1,5 +1,7 @@
 local function init()
-  require'telescope'.setup{
+  t = require'telescope'
+
+  t.setup{
     defaults = {
       file_ignore_patterns = {
         "node_modules/.*",

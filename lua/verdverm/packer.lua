@@ -38,9 +38,9 @@ local function packer_startup()
   use {
     'nvim-treesitter/nvim-treesitter',
     run = 'TSUpdate',
-    config = function ()
-      require'verdverm.plugins.treesitter'.init()
-    end,
+    --config = function ()
+    --  require'verdverm.plugins.treesitter'.init()
+    --end,
   }
 
   -- Completion
@@ -58,30 +58,44 @@ local function packer_startup()
       'ray-x/cmp-treesitter',
       'onsails/lspkind-nvim'
     },
-    config = function ()
-      require'verdverm.plugins.cmp'.init()
-      require'verdverm.plugins.lspkind'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.cmp'.init()
+    --  require'verdverm.plugins.lspkind'.init()
+    --end
+  } 
+
+
+
+  print("INIT")
+  -- Debuggers
+  use {
+    'mfussenegger/nvim-dap',
+    'leoluz/nvim-dap-go',
+    "rcarriga/nvim-dap-ui",
+    --config = function ()
+    --  print("SETUP DAP")
+    --  require'verdverm.plugins.dap'.init()
+    --end
   }
 
-  require'verdverm.plugins.lspconfig'.init()
 
   -- Telescope
   use 'nvim-lua/popup.nvim'
   use {
     'nvim-telescope/telescope.nvim',
     -- requires = 'rmagatti/session-lens',
-    config = function ()
-      require'verdverm.plugins.telescope'.init()
-    end
+    --config = function ()
+    --  print("SETUP TELE")
+    --  require'verdverm.plugins.telescope'.init()
+    --end
   }
 
   -- Themes
   use {
     'folke/tokyonight.nvim',
-    config = function ()
-      require'verdverm.plugins.tokyonight'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.tokyonight'.init()
+    --end
   }
 
   -- Git Support
@@ -91,9 +105,9 @@ local function packer_startup()
     requires = {
       'nvim-lua/plenary.nvim'
     },
-    config = function ()
-      require'verdverm.plugins.gitsigns'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.gitsigns'.init()
+    --end
   }
 
   -- Filebrowser
@@ -102,16 +116,16 @@ local function packer_startup()
     requires = {
       'Xuyuanp/nerdtree-git-plugin',
     },
-    config = function ()
-      require'verdverm.plugins.nerdtree'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.nerdtree'.init()
+    --end
   }
   -- NerdFont (must be after NertTree
   use {
     'ryanoasis/vim-devicons',
-    config = function ()
-      require'verdverm.plugins.devicons'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.devicons'.init()
+    --end
   }
 
   use 'jeetsukumaran/vim-buffergator'
@@ -126,9 +140,9 @@ local function packer_startup()
 
   use {
     'hoob3rt/lualine.nvim',
-    config = function ()
-      require'verdverm.plugins.lualine'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.lualine'.init()
+    --end
   }
 
   use 'preservim/nerdcommenter'
@@ -138,23 +152,23 @@ local function packer_startup()
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require"trouble".setup()
-    end
+    --config = function()
+    --  require"trouble".setup()
+    --end
   }
 
   use {
     'folke/lsp-colors.nvim',
-    config = function()
-      require("lsp-colors").setup()
-    end
+    --config = function()
+    --  require("lsp-colors").setup()
+    --end
   }
 
   use {
     'voldikss/vim-floaterm',
-    config = function ()
-      require'verdverm.plugins.floaterm'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.floaterm'.init()
+    --end
   }
 
   use {
@@ -163,9 +177,9 @@ local function packer_startup()
       'kosayoda/nvim-lightbulb'
     },
     cmd = 'CodeActionMenu',
-    config = function ()
-      require'verdverm.plugins.code_action_menu'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.code_action_menu'.init()
+    --end
   }
 
   -- https://github.com/jjo/vim-cue
@@ -178,9 +192,9 @@ local function packer_startup()
   -- Sessions (put last so other modules referenced are already loaded)
   use {
     'rmagatti/auto-session',
-    config = function ()
-      require'verdverm.plugins.auto_session'.init()
-    end
+    --config = function ()
+    --  require'verdverm.plugins.auto_session'.init()
+    --end
   }
 
 end
@@ -188,6 +202,23 @@ end
 local function init()
   packer_verify()
   packer_startup()
+
+  require'verdverm.plugins.treesitter'.init()
+  require'verdverm.plugins.cmp'.init()
+  require'verdverm.plugins.lspkind'.init()
+  require'verdverm.plugins.lspconfig'.init()
+  require'verdverm.plugins.dap'.init()
+  require'verdverm.plugins.telescope'.init()
+  require'verdverm.plugins.tokyonight'.init()
+  require'verdverm.plugins.gitsigns'.init()
+  require'verdverm.plugins.nerdtree'.init()
+  require'verdverm.plugins.devicons'.init()
+  require'verdverm.plugins.lualine'.init()
+  require"trouble".setup()
+  require("lsp-colors").setup()
+  require'verdverm.plugins.floaterm'.init()
+  require'verdverm.plugins.code_action_menu'.init()
+  require'verdverm.plugins.auto_session'.init()
 end
 
 return {
