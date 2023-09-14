@@ -9,6 +9,13 @@ local function init()
 
   -- Keymaps
   map('n', '<leader>fm', '<CMD>CodeActionMenu<CR>', options)
+
+  require'nvim-lightbulb'.setup({
+    sign = { enabled = false },
+    number = { enabled = true },
+    virtual_text = { enabled = true, text = "" },
+  })
+
 end
 
 return {

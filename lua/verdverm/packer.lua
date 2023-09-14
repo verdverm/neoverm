@@ -177,9 +177,6 @@ local function packer_startup()
       'kosayoda/nvim-lightbulb'
     },
     cmd = 'CodeActionMenu',
-    --config = function ()
-    --  require'verdverm.plugins.code_action_menu'.init()
-    --end
   }
 
   -- https://github.com/jjo/vim-cue
@@ -192,9 +189,6 @@ local function packer_startup()
   -- Sessions (put last so other modules referenced are already loaded)
   use {
     'rmagatti/auto-session',
-    --config = function ()
-    --  require'verdverm.plugins.auto_session'.init()
-    --end
   }
 
 end
